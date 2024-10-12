@@ -1,0 +1,48 @@
+server:
+  port: 9030
+
+logging:
+  file:
+    path: logs/cloud-server/cloud-server-iot/iot-camera
+  level:
+    org.yzu.cloud.core.CallbackHandler: debug
+
+spring:
+  # 微服务名称
+  application:
+    name: iot-camera-service
+  # dev环境
+  profiles:
+    active: dev
+  # JDBC驱动及数据源
+  # Redis服务及端口
+  redis:
+    host: 118.31.104.26
+    port: 6479
+    password: password
+  # SpringCloud相关配置
+  cloud:
+    # Nacos服务注册中心地址
+    nacos:
+      discovery:
+        server-addr: 192.168.50.128:8848
+mybatis:
+  # mapper层扫描路径
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    # 开启驼峰映射，使得数据库字段与实体类映射起来
+    map-underscore-to-camel-case: true
+
+feign:
+  httpclient:
+    enabled: true # 支持HttpClient的开关
+    max-connections: 200 # 最大连接数
+    max-connections-per-route: 50 # 单个路径的最大连接数
+
+mqtt:
+  enable: true
+  host: tcp://119.45.119.119:2883
+  username: root
+  password: password
+  timeout: 10
+  keepAlive: 60

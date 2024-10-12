@@ -1,0 +1,57 @@
+server:
+  # 微服务端口
+  port: 8010
+
+logging:
+  file:
+    path: logs/cloud-server/cloud-server-user
+
+spring:
+  # 微服务名称
+  application:
+    name: lamp-service
+  # 开启dev环境
+  profiles:
+    active: dev
+  # JDBC驱动及数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: password
+    url: jdbc:mysql://118.31.104.26:13306/cloud?characterEncoding=utf8&useUnicode=true&verifyServerCertificate=false&useSSL=false&requireSSL=false&serverTimezone=Asia/Shanghai
+    type: com.alibaba.druid.pool.DruidDataSource
+  # Redis服务及端口
+  redis:
+    host: 118.31.104.26
+    port: 6479
+    password: password
+
+  # SpringCloud相关配置
+  cloud:
+    nacos:
+      # Nacos服务注册发现地址
+      discovery:
+        server-addr: 192.168.50.128:8848
+          #- 192.168.10.1:8847
+          #- 192.168.10.1:8848
+          #- 192.168.10.1:8849
+      # Nacos配置中心地址
+#      config:
+#        server-addr: 119.45.119.119:18848
+#          #- 192.168.10.1:8847
+#          #- 192.168.10.1:8848
+#          #- 192.168.10.1:8849
+#        file-extension: yaml
+#        shared-configs:
+#          - shared-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+    # sentinel控制台地址
+#    sentinel:
+#      transport:
+#        dashboard: 43.142.108.154:18080
+
+mybatis:
+  # mapper层扫描路径
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    # 开启驼峰映射，使得数据库字段与实体类映射起来
+    map-underscore-to-camel-case: true

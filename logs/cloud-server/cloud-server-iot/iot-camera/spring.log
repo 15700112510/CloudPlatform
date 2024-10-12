@@ -1,0 +1,523 @@
+2024-08-02 14:55:49.737  INFO 6212 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 14:55:50.233  INFO 6212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 14:55:50.235  INFO 6212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 14:55:50.253  INFO 6212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-08-02 14:55:50.431  INFO 6212 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=571880d3-a648-35f1-af33-a635e66d1d67
+2024-08-02 14:55:51.200  INFO 6212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 14:55:51.201  INFO 6212 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 14:55:51.201  INFO 6212 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 14:55:51.201  INFO 6212 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 14:55:51.205  INFO 6212 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 14:55:51.215  INFO 6212 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 14:55:51.215  INFO 6212 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 14:55:51.356  INFO 6212 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 14:55:51.357  INFO 6212 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1607 ms
+2024-08-02 14:55:51.413  WARN 6212 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceService': Unsatisfied dependency expressed through field 'dbMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cloud.common.datasource.mapper.dbMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-08-02 14:55:51.414  INFO 6212 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-02 14:55:51.499  INFO 6212 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-08-02 14:55:51.518 ERROR 6212 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dbMapper in com.cloud.common.datasource.mbtspls.DataSourceService required a bean of type 'com.cloud.common.datasource.mapper.dbMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cloud.common.datasource.mapper.dbMapper' in your configuration.
+
+2024-08-02 14:57:56.420  INFO 4736 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 14:57:56.855  INFO 4736 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 14:57:56.857  INFO 4736 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 14:57:56.872  INFO 4736 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-08-02 14:57:57.059  INFO 4736 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42238081-387a-330a-a2fc-7a9266d91620
+2024-08-02 14:57:57.469  INFO 4736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 14:57:57.470  INFO 4736 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 14:57:57.470  INFO 4736 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 14:57:57.470  INFO 4736 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 14:57:57.474  INFO 4736 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 14:57:57.482  INFO 4736 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 14:57:57.483  INFO 4736 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 14:57:57.682  INFO 4736 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 14:57:57.682  INFO 4736 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1250 ms
+2024-08-02 14:57:57.749  WARN 4736 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceService': Unsatisfied dependency expressed through field 'dbMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cloud.common.datasource.mapper.dbMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-08-02 14:57:57.751  INFO 4736 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-02 14:57:57.770  INFO 4736 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-08-02 14:57:57.785 ERROR 4736 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dbMapper in com.cloud.common.datasource.mbtspls.DataSourceService required a bean of type 'com.cloud.common.datasource.mapper.dbMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cloud.common.datasource.mapper.dbMapper' in your configuration.
+
+2024-08-02 15:02:04.274  INFO 12036 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:02:04.718  INFO 12036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:02:04.720  INFO 12036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:02:04.736  INFO 12036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:02:04.926  INFO 12036 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42238081-387a-330a-a2fc-7a9266d91620
+2024-08-02 15:02:05.364  INFO 12036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:02:05.365  INFO 12036 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:02:05.365  INFO 12036 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:02:05.365  INFO 12036 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:02:05.368  INFO 12036 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:02:05.377  INFO 12036 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:02:05.378  INFO 12036 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:02:05.600  INFO 12036 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:02:05.600  INFO 12036 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1313 ms
+2024-08-02 15:02:05.667  WARN 12036 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceService': Unsatisfied dependency expressed through field 'dbMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cloud.common.datasource.mapper.dbMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-08-02 15:02:05.669  INFO 12036 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-02 15:02:05.687  INFO 12036 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-08-02 15:02:05.703 ERROR 12036 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dbMapper in com.cloud.common.datasource.mbtspls.DataSourceService required a bean of type 'com.cloud.common.datasource.mapper.dbMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cloud.common.datasource.mapper.dbMapper' in your configuration.
+
+2024-08-02 15:11:12.703  INFO 2660 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:11:13.196  INFO 2660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:11:13.198  INFO 2660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:11:13.213  INFO 2660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:11:13.388  INFO 2660 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42238081-387a-330a-a2fc-7a9266d91620
+2024-08-02 15:11:13.817  INFO 2660 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:11:13.818  INFO 2660 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:11:13.819  INFO 2660 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:11:13.819  INFO 2660 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:11:13.823  INFO 2660 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:11:13.834  INFO 2660 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:11:13.834  INFO 2660 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:11:14.070  INFO 2660 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:11:14.070  INFO 2660 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1354 ms
+2024-08-02 15:11:14.132  WARN 2660 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceService': Unsatisfied dependency expressed through field 'dbMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cloud.common.datasource.mapper.dbMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-08-02 15:11:14.134  INFO 2660 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-02 15:11:14.149  INFO 2660 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-08-02 15:11:14.162 ERROR 2660 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dbMapper in com.cloud.common.datasource.mbtspls.DataSourceService required a bean of type 'com.cloud.common.datasource.mapper.dbMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cloud.common.datasource.mapper.dbMapper' in your configuration.
+
+2024-08-02 15:14:03.442  INFO 24080 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:14:03.893  INFO 24080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:14:03.895  INFO 24080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:14:03.910  INFO 24080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:14:04.092  INFO 24080 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42238081-387a-330a-a2fc-7a9266d91620
+2024-08-02 15:14:04.519  INFO 24080 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:14:04.520  INFO 24080 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:14:04.520  INFO 24080 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:14:04.520  INFO 24080 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:14:04.523  INFO 24080 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:14:04.531  INFO 24080 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:14:04.532  INFO 24080 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:14:04.728  INFO 24080 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:14:04.728  INFO 24080 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1274 ms
+2024-08-02 15:14:04.789  WARN 24080 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceService': Unsatisfied dependency expressed through field 'dbMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cloud.common.datasource.mapper.dbMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-08-02 15:14:04.791  INFO 24080 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-02 15:14:04.808  INFO 24080 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-08-02 15:14:04.824 ERROR 24080 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dbMapper in com.cloud.common.datasource.mbtspls.DataSourceService required a bean of type 'com.cloud.common.datasource.mapper.dbMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cloud.common.datasource.mapper.dbMapper' in your configuration.
+
+2024-08-02 15:22:07.128  INFO 18280 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:22:07.564  INFO 18280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:22:07.566  INFO 18280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:22:07.582  INFO 18280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:22:07.761  INFO 18280 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42238081-387a-330a-a2fc-7a9266d91620
+2024-08-02 15:22:08.182  INFO 18280 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:22:08.183  INFO 18280 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:22:08.183  INFO 18280 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:22:08.184  INFO 18280 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:22:08.187  INFO 18280 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:22:08.195  INFO 18280 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:22:08.195  INFO 18280 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:22:08.395  INFO 18280 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:22:08.395  INFO 18280 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1254 ms
+2024-08-02 15:22:08.454  WARN 18280 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceService': Unsatisfied dependency expressed through field 'dbMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cloud.common.datasource.mapper.dbMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-08-02 15:22:08.455  INFO 18280 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-02 15:22:08.472  INFO 18280 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-08-02 15:22:08.487 ERROR 18280 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dbMapper in com.cloud.common.datasource.mbtspls.DataSourceService required a bean of type 'com.cloud.common.datasource.mapper.dbMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cloud.common.datasource.mapper.dbMapper' in your configuration.
+
+2024-08-02 15:26:07.871  INFO 17156 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:26:08.366  INFO 17156 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:26:08.368  INFO 17156 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:26:08.385  INFO 17156 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:26:08.558  INFO 17156 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42238081-387a-330a-a2fc-7a9266d91620
+2024-08-02 15:26:08.978  INFO 17156 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:26:08.979  INFO 17156 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:26:08.979  INFO 17156 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:26:08.979  INFO 17156 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:26:08.983  INFO 17156 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:26:08.992  INFO 17156 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:26:08.992  INFO 17156 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:26:09.158  INFO 17156 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:26:09.158  INFO 17156 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1270 ms
+2024-08-02 15:26:09.217  WARN 17156 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceService': Unsatisfied dependency expressed through field 'dbMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cloud.common.datasource.mapper.dbMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-08-02 15:26:09.219  INFO 17156 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-02 15:26:09.237  INFO 17156 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-08-02 15:26:09.254 ERROR 17156 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dbMapper in com.cloud.common.datasource.mbtspls.DataSourceService required a bean of type 'com.cloud.common.datasource.mapper.dbMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cloud.common.datasource.mapper.dbMapper' in your configuration.
+
+2024-08-02 15:33:36.050  INFO 2304 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:33:36.472  INFO 2304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:33:36.473  INFO 2304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:33:36.490  INFO 2304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:33:36.666  INFO 2304 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42238081-387a-330a-a2fc-7a9266d91620
+2024-08-02 15:33:37.074  INFO 2304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:33:37.075  INFO 2304 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:33:37.076  INFO 2304 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:33:37.076  INFO 2304 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:33:37.078  INFO 2304 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:33:37.086  INFO 2304 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:33:37.086  INFO 2304 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:33:37.282  INFO 2304 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:33:37.282  INFO 2304 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1219 ms
+2024-08-02 15:33:37.341  WARN 2304 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceService': Unsatisfied dependency expressed through field 'dbMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cloud.common.datasource.mapper.dbMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-08-02 15:33:37.343  INFO 2304 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-02 15:33:37.360  INFO 2304 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-08-02 15:33:37.377 ERROR 2304 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dbMapper in com.cloud.common.datasource.mbtspls.DataSourceService required a bean of type 'com.cloud.common.datasource.mapper.dbMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cloud.common.datasource.mapper.dbMapper' in your configuration.
+
+2024-08-02 15:39:29.075  INFO 10844 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:39:29.504  INFO 10844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:39:29.506  INFO 10844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:39:29.522  INFO 10844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:39:29.700  INFO 10844 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=0e68c5b1-4d54-34e4-b060-3ca7003cfb60
+2024-08-02 15:39:30.129  INFO 10844 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:39:30.131  INFO 10844 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:39:30.131  INFO 10844 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:39:30.131  INFO 10844 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:39:30.134  INFO 10844 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:39:30.142  INFO 10844 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:39:30.142  INFO 10844 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:39:30.340  INFO 10844 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:39:30.340  INFO 10844 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1249 ms
+2024-08-02 15:39:30.723  WARN 10844 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cameraController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'CameraService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.iot.camera.mapper.CameraMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2024-08-02 15:39:30.724  INFO 10844 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2024-08-02 15:39:30.725  INFO 10844 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-02 15:39:30.741  INFO 10844 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-08-02 15:39:30.756 ERROR 10844 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.iot.camera.mapper.CameraMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.iot.camera.mapper.CameraMapper' in your configuration.
+
+2024-08-02 15:40:26.613  INFO 652 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:40:27.237  INFO 652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:40:27.240  INFO 652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:40:27.259  INFO 652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:40:27.500  INFO 652 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6ab7d4e4-7740-345a-9f93-cca6c2b7c451
+2024-08-02 15:40:27.986  INFO 652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:40:27.986  INFO 652 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:40:27.987  INFO 652 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:40:27.987  INFO 652 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:40:27.990  INFO 652 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:40:28.000  INFO 652 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:40:28.000  INFO 652 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:40:28.150  INFO 1680 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:40:28.195  INFO 652 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:40:28.195  INFO 652 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1560 ms
+2024-08-02 15:40:28.632  INFO 1680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:40:28.634  INFO 1680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:40:28.651  INFO 1680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:40:28.851  INFO 1680 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6ab7d4e4-7740-345a-9f93-cca6c2b7c451
+2024-08-02 15:40:29.280  INFO 1680 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:40:29.281  INFO 1680 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:40:29.281  INFO 1680 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:40:29.281  INFO 1680 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:40:29.285  INFO 1680 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:40:29.295  INFO 1680 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:40:29.295  INFO 1680 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:40:29.511  INFO 1680 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:40:29.512  INFO 1680 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1346 ms
+2024-08-02 15:40:30.679  WARN 652 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-08-02 15:40:30.958  INFO 652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9030 (http) with context path ''
+2024-08-02 15:40:30.973  INFO 652 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP iot-camera-service 192.168.80.1:9030 register finished
+2024-08-02 15:40:31.492  INFO 652 --- [main] com.iot.camera.CameraApplication         : Started CameraApplication in 7.043 seconds (JVM running for 8.166)
+2024-08-02 15:40:31.951  WARN 1680 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-08-02 15:40:32.190  WARN 1680 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 9030 is already in use
+2024-08-02 15:40:37.937  WARN 652 --- [Thread-23] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2024-08-02 15:40:37.937  WARN 652 --- [Thread-17] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2024-08-02 15:40:37.938  WARN 652 --- [Thread-23] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2024-08-02 15:40:37.939  WARN 652 --- [Thread-17] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2024-08-02 15:40:38.286  INFO 652 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2024-08-02 15:40:38.290  INFO 652 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2024-08-02 15:40:39.240  INFO 1680 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2024-08-02 15:40:39.242  INFO 1680 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-02 15:40:39.260  INFO 1680 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-08-02 15:40:39.279 ERROR 1680 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9030 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9030 or configure this application to listen on another port.
+
+2024-08-02 15:40:39.280  WARN 1680 --- [Thread-16] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2024-08-02 15:40:39.280  WARN 1680 --- [Thread-22] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2024-08-02 15:40:39.280  WARN 1680 --- [Thread-22] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2024-08-02 15:40:51.041  INFO 25580 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:40:51.465  INFO 25580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:40:51.468  INFO 25580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:40:51.486  INFO 25580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:40:51.678  INFO 25580 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6ab7d4e4-7740-345a-9f93-cca6c2b7c451
+2024-08-02 15:40:52.085  INFO 25580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:40:52.086  INFO 25580 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:40:52.086  INFO 25580 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:40:52.086  INFO 25580 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:40:52.089  INFO 25580 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:40:52.097  INFO 25580 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:40:52.098  INFO 25580 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:40:52.293  INFO 25580 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:40:52.293  INFO 25580 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1236 ms
+2024-08-02 15:40:54.366  WARN 25580 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-08-02 15:40:54.591  INFO 25580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9030 (http) with context path ''
+2024-08-02 15:40:54.606  INFO 25580 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP iot-camera-service 192.168.80.1:9030 register finished
+2024-08-02 15:40:55.054  INFO 25580 --- [main] com.iot.camera.CameraApplication         : Started CameraApplication in 5.847 seconds (JVM running for 6.899)
+2024-08-02 15:44:28.590  WARN 25580 --- [Thread-20] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2024-08-02 15:44:28.590  WARN 25580 --- [Thread-14] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2024-08-02 15:44:28.591  WARN 25580 --- [Thread-20] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2024-08-02 15:44:28.591  WARN 25580 --- [Thread-14] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2024-08-02 15:44:28.921  INFO 25580 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2024-08-02 15:44:28.924  INFO 25580 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2024-08-02 15:44:36.112  INFO 25580 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2024-08-02 15:44:41.468  INFO 7652 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:44:41.904  INFO 7652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:44:41.905  INFO 7652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:44:41.921  INFO 7652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:44:42.093  INFO 7652 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42238081-387a-330a-a2fc-7a9266d91620
+2024-08-02 15:44:42.492  INFO 7652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:44:42.493  INFO 7652 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:44:42.493  INFO 7652 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:44:42.493  INFO 7652 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:44:42.496  INFO 7652 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:44:42.504  INFO 7652 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:44:42.505  INFO 7652 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:44:42.708  INFO 7652 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:44:42.708  INFO 7652 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1228 ms
+2024-08-02 15:44:42.770  WARN 7652 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceService': Unsatisfied dependency expressed through field 'dbMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cloud.common.datasource.mapper.dbMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-08-02 15:44:42.771  INFO 7652 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-02 15:44:42.791  INFO 7652 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-08-02 15:44:42.806 ERROR 7652 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dbMapper in com.cloud.common.datasource.mbtspls.DataSourceService required a bean of type 'com.cloud.common.datasource.mapper.dbMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cloud.common.datasource.mapper.dbMapper' in your configuration.
+
+2024-08-02 15:47:07.143  INFO 8100 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:47:07.588  INFO 8100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:47:07.589  INFO 8100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:47:07.606  INFO 8100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:47:07.787  INFO 8100 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6ab7d4e4-7740-345a-9f93-cca6c2b7c451
+2024-08-02 15:47:08.271  INFO 8100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:47:08.272  INFO 8100 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:47:08.272  INFO 8100 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:47:08.273  INFO 8100 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:47:08.277  INFO 8100 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:47:08.292  INFO 8100 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:47:08.292  INFO 8100 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:47:08.819  INFO 8100 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:47:08.820  INFO 8100 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1662 ms
+2024-08-02 15:47:11.027  WARN 8100 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-08-02 15:47:11.253  INFO 8100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9030 (http) with context path ''
+2024-08-02 15:47:11.264  INFO 8100 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP iot-camera-service 192.168.80.1:9030 register finished
+2024-08-02 15:47:11.710  INFO 8100 --- [main] com.iot.camera.CameraApplication         : Started CameraApplication in 6.459 seconds (JVM running for 7.404)
+2024-08-02 15:51:29.595  WARN 8100 --- [Thread-20] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2024-08-02 15:51:29.596  WARN 8100 --- [Thread-14] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2024-08-02 15:51:29.596  WARN 8100 --- [Thread-20] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2024-08-02 15:51:29.597  WARN 8100 --- [Thread-14] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2024-08-02 15:51:29.933  INFO 8100 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2024-08-02 15:51:29.937  INFO 8100 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2024-08-02 15:51:35.514  INFO 8100 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2024-08-02 15:51:39.784  INFO 10016 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:51:40.243  INFO 10016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:51:40.245  INFO 10016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:51:40.261  INFO 10016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:51:40.455  INFO 10016 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6ab7d4e4-7740-345a-9f93-cca6c2b7c451
+2024-08-02 15:51:40.869  INFO 10016 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:51:40.870  INFO 10016 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:51:40.870  INFO 10016 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:51:40.870  INFO 10016 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:51:40.873  INFO 10016 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:51:40.882  INFO 10016 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:51:40.883  INFO 10016 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:51:41.095  INFO 10016 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:51:41.095  INFO 10016 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1291 ms
+2024-08-02 15:51:43.265  WARN 10016 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-08-02 15:51:43.491  INFO 10016 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9030 (http) with context path ''
+2024-08-02 15:51:43.501  INFO 10016 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP iot-camera-service 192.168.80.1:9030 register finished
+2024-08-02 15:51:43.953  INFO 10016 --- [main] com.iot.camera.CameraApplication         : Started CameraApplication in 5.976 seconds (JVM running for 7.099)
+2024-08-02 15:52:26.941  WARN 10016 --- [Thread-21] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2024-08-02 15:52:26.952  WARN 10016 --- [Thread-15] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2024-08-02 15:52:26.952  WARN 10016 --- [Thread-21] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2024-08-02 15:52:26.953  WARN 10016 --- [Thread-15] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2024-08-02 15:52:27.337  INFO 10016 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2024-08-02 15:52:27.340  INFO 10016 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2024-08-02 15:52:34.629  INFO 10016 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2024-08-02 15:52:39.101  INFO 8576 --- [main] com.iot.camera.CameraApplication         : The following 1 profile is active: "dev"
+2024-08-02 15:52:39.565  INFO 8576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:52:39.568  INFO 8576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:52:39.587  INFO 8576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:52:39.773  INFO 8576 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6ab7d4e4-7740-345a-9f93-cca6c2b7c451
+2024-08-02 15:52:40.198  INFO 8576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9030 (http)
+2024-08-02 15:52:40.200  INFO 8576 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:52:40.200  INFO 8576 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:52:40.200  INFO 8576 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:52:40.203  INFO 8576 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:52:40.212  INFO 8576 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:52:40.213  INFO 8576 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:52:40.444  INFO 8576 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:52:40.444  INFO 8576 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1326 ms
+2024-08-02 15:52:42.522  WARN 8576 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-08-02 15:52:42.753  INFO 8576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9030 (http) with context path ''
+2024-08-02 15:52:42.765  INFO 8576 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP iot-camera-service 192.168.80.1:9030 register finished
+2024-08-02 15:52:43.227  INFO 8576 --- [main] com.iot.camera.CameraApplication         : Started CameraApplication in 5.926 seconds (JVM running for 6.938)

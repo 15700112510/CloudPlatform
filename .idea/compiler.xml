@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="iot-device" />
+        <module name="cloud-common-datasource" />
+        <module name="cloud-api" />
+        <module name="cloud-common-core" />
+        <module name="iot.camera" />
+        <module name="cloud-common-redis" />
+        <module name="cloud-gateway" />
+        <module name="cloud-server-user" />
+        <module name="iot-gateway" />
+        <module name="cloud-common-security" />
+        <module name="iot-lamppost" />
+        <module name="iot-screen" />
+        <module name="iot-lamp" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud-common-websocket" target="1.8" />
+      <module name="cloud-mqtt" target="1.8" />
+      <module name="iot-alarm" target="1.8" />
+      <module name="iot-param" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

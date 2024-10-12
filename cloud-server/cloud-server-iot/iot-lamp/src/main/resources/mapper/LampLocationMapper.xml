@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iot.lamp.mapper.LampLocationMapper">
+
+    <insert id="insertLocation">
+        insert into cloud_lamp_location (lamp_id)
+        values (#{lampId})
+    </insert>
+
+    <update id="updateLocation">
+        update cloud_lamp_location
+        set latitude  = #{latitude},
+            longitude = #{longitude}
+        where lamp_id = #{lampId}
+    </update>
+
+</mapper>

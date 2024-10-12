@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iot.gateway.mapper.GatewayMapper">
+
+    <insert id="insertGatewayInfo">
+        insert into cloud_mount_gateway(device_id, serial_num, signal_type, module_status, protocol_version,
+                                        software_version,
+                                        hardware_version)
+        values (#{deviceId}, #{serialNum}, #{signalType}, #{moduleStatus},
+                #{protocolVersion}, #{softwareVersion}, #{hardwareVersion})
+    </insert>
+
+    <insert id="insertElectricParam">
+        insert into cloud_gateway_electric_param(gateway_id, system_time, status, grid_voltage, grid_current,
+                                                 grid_power,
+                                                 grid_frequency, grid_electricity, a_status, a_voltage, a_current,
+                                                 b_status, b_voltage, b_current, c_status, c_voltage, c_current,
+                                                 alternating_one_status, alternating_two_status,
+                                                 alternating_three_status,
+                                                 direct_one_status, direct_two_status, direct_three_status)
+        values (#{gatewayId}, #{systemTime}, #{status}, #{gridVoltage}, #{gridCurrent}, #{gridPower}, #{gridFrequency},
+                #{gridElectricity},
+                #{aStatus}, #{aVoltage}, #{aCurrent}, #{bStatus}, #{bVoltage}, #{bCurrent}, #{cStatus}, #{cVoltage},
+                #{cCurrent},
+                #{alternatingOneStatus}, #{alternatingTwoStatus}, #{alternatingThreeStatus}, #{directOneStatus},
+                #{directTwoStatus}, #{directThreeStatus})
+    </insert>
+
+    <insert id="insertMqttConf">
+        insert into cloud_gateway_mqtt(gateway_id, hostname, port, username, password, keepalive, update_time)
+        values (#{gatewayId}, "-1", -1, "-1", "-1", -1, now())
+    </insert>
+
+    <insert id="insertTraffic">
+        insert into cloud_gateway_traffic(gateway_id, total_up, total_down, day_up, day_down, update_time)
+        values (#{id}, #{traffic.totalUp}, #{traffic.totalDown}, #{traffic.dayUp}, #{traffic.dayDown}, now())
+    </insert>
+
+    <insert id="insertCommonConf">
+        insert into cloud_gateway_common(gateway_id, report_interval, dns_server, timeout, system_time,
+                                         software_version, update_time)
+        values (#{gatewayId}, -1, "-1", -1, "-1", "-1", now())
+    </insert>
+
+    <insert id="insertWifiConf">
+        insert into cloud_gateway_wifi(gateway_id, mode, name, encryption, password, enable, update_time)
+        values (#{gatewayId}, -1, "-1", -1, "-1", -1, now())
+    </insert>
+
+    <insert id="insertInitTraffic">
+        insert into cloud_gateway_traffic(gateway_id, total_up, total_down, day_up, day_down, update_time)
+        values (#{gatewayId}, "-1", "-1", "-1", "-1", now())
+    </insert>
+
+    <update id="updateMqttConf">
+        update cloud_gateway_mqtt
+        set hostname    = #{conf.hostname},
+            port        = #{conf.port},
+            username    = #{conf.username},
+            password    = #{conf.password},
+            keepalive   = #{conf.keepalive},
+            update_time = now()
+        where gateway_id = #{id}
+    </update>
+
+    <update id="updateCommonConf">
+        update cloud_gateway_common
+        set report_interval  = #{conf.reportInterval},
+            dns_server       = #{conf.dnsServer},
+            timeout          = #{conf.timeout},
+            system_time      = #{conf.systemTime},
+            software_version = #{conf.softwareVersion},
+            update_time      = now()
+        where gateway_id = #{id}
+    </update>
+
+    <update id="updateWifiConf">
+        update cloud_gateway_wifi
+        set mode        = #{conf.mode},
+            name        = #{conf.name},
+            encryption  = #{conf.encryption},
+            password    = #{conf.password},
+            enable      = #{conf.enable},
+            update_time = now()
+        where gateway_id = #{id}
+    </update>
+
+    <update id="updateTraffic">
+        update cloud_gateway_traffic
+        set total_up    = #{traffic.totalUp},
+            total_down  = #{traffic.totalDown},
+            day_up      = #{traffic.dayUp},
+            day_down    = #{traffic.dayDown},
+            update_time = now()
+        where gateway_id = #{id}
+          and update_time = #{recent}
+    </update>
+
+    <update id="updateGatewayInfo">
+        update cloud_mount_gateway
+        set signal_type   = #{signalType},
+            module_status = #{moduleStatus}
+        where gateway_id = #{gatewayId}
+    </update>
+
+    <select id="getGatewayNum" resultType="java.lang.Integer">
+        select count(gateway_id)
+        from cloud_mount_gateway
+        where serial_num = #{serialNum}
+    </select>
+
+    <select id="getDeviceId" resultType="java.lang.Long">
+        select device_id
+        from cloud_mount_gateway
+        where serial_num = #{serialNum} limit 1
+    </select>
+
+    <select id="getAllSerialNum" resultType="java.lang.String">
+        select serial_num
+        from cloud_mount_gateway
+    </select>
+
+    <select id="queryGatewayId" resultType="java.lang.Long">
+        select gateway_id
+        from cloud_mount_gateway
+        where serial_num = #{serialNum}
+    </select>
+
+    <select id="getRecentTime" resultType="java.sql.Timestamp">
+        select update_time
+        from cloud_gateway_traffic
+        where gateway_id = #{gatewayId}
+        order by update_time desc limit 1
+    </select>
+
+    <select id="getGatewayId" resultType="java.lang.Long">
+        select gateway_id
+        from cloud_mount_gateway
+        where device_id = #{deviceId}
+    </select>
+
+    <select id="getAllDeviceId" resultType="java.lang.Long">
+        select device_id
+        from cloud_mount_gateway
+    </select>
+
+    <select id="getSerialNum" resultType="java.lang.String">
+        select serial_num
+        from cloud_mount_gateway
+        where gateway_id = #{gatewayId}
+    </select>
+
+    <select id="getAllGatewayId" resultType="java.lang.Long">
+        select gateway_id
+        from cloud_mount_gateway
+    </select>
+
+    <select id="getAllOnlineGatewayId" resultType="java.lang.Long">
+        select gateway_id
+        from cloud_mount_gateway
+                 left join cloud_device on cloud_mount_gateway.device_id = cloud_device.device_id
+        where status = '0'
+    </select>
+
+    <select id="queryMqttConf" resultType="com.iot.gateway.domain.register.MqttConf">
+        select *
+        from cloud_gateway_mqtt
+        where gateway_id = #{gatewayId}
+    </select>
+
+    <select id="queryCommonConf" resultType="com.iot.gateway.domain.register.CommonConf">
+        select *
+        from cloud_gateway_common
+        where gateway_id = #{gatewayId}
+    </select>
+
+    <select id="queryWifiConf" resultType="com.iot.gateway.domain.register.WifiConf">
+        select *
+        from cloud_gateway_wifi
+        where gateway_id = #{gatewayId}
+    </select>
+
+    <select id="queryTraffic" resultType="com.iot.gateway.domain.register.Traffic">
+        select *
+        from cloud_gateway_traffic
+        where gateway_id = #{gatewayId}
+        order by update_time desc limit 1
+    </select>
+
+    <select id="queryAllGateway" resultType="com.cloud.api.model.GatewayInfo">
+        select *
+        from cloud_mount_gateway
+                 left join cloud_device on cloud_mount_gateway.device_id = cloud_device.device_id
+    </select>
+
+    <select id="getGatewayIdBySerialNum" resultType="java.lang.Long">
+        select gateway_id
+        from cloud_mount_gateway
+        where serial_num = #{serialNum}
+    </select>
+
+</mapper>

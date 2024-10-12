@@ -1,0 +1,66 @@
+2023-06-10 16:09:09.091  WARN 34193 --- [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[iot-alarm-service] & group[DEFAULT_GROUP]
+2023-06-10 16:09:09.102  WARN 34193 --- [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[iot-alarm-service.yaml] & group[DEFAULT_GROUP]
+2023-06-10 16:09:09.111  WARN 34193 --- [main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[iot-alarm-service-dev.yaml] & group[DEFAULT_GROUP]
+2023-06-10 16:09:09.112  INFO 34193 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-iot-alarm-service-dev.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-iot-alarm-service.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-iot-alarm-service,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-shared-dev.yaml,DEFAULT_GROUP'}]
+2023-06-10 16:09:09.120  INFO 34193 --- [main] com.iot.alarm.AlarmApplication           : The following 1 profile is active: "dev"
+2023-06-10 16:09:09.453  INFO 34193 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-10 16:09:09.454  INFO 34193 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-10 16:09:09.465  INFO 34193 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2023-06-10 16:09:09.595  INFO 34193 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2023-06-10 16:09:09.600  INFO 34193 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2023-06-10 16:09:09.643  INFO 34193 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5988bd06-6250-3c74-b0c9-9db4b11f34fa
+2023-06-10 16:09:09.985  INFO 34193 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 30010 (http)
+2023-06-10 16:09:09.990  INFO 34193 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-10 16:09:09.990  INFO 34193 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-06-10 16:09:10.042  INFO 34193 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-10 16:09:10.042  INFO 34193 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 915 ms
+2023-06-10 16:09:10.433  INFO 34193 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'iot-lamp-service' URL not provided. Will try picking an instance via load-balancing.
+2023-06-10 16:09:11.719  INFO 34193 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2023-06-10 16:09:11.719  INFO 34193 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'iot-alarm-service-1.errorChannel' has 1 subscriber(s).
+2023-06-10 16:09:11.719  INFO 34193 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2023-06-10 16:09:11.721  INFO 34193 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2023-06-10 16:09:11.721  INFO 34193 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+2023-06-10 16:09:11.721  INFO 34193 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2023-06-10 16:09:11.799  INFO 34193 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 30010 (http) with context path ''
+2023-06-10 16:09:11.803  INFO 34193 --- [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: BeatInfo{port=30010, ip='10.131.1.28', weight=1.0, serviceName='DEFAULT_GROUP@@iot-alarm-service', cluster='DEFAULT', metadata={preserved.register.source=SPRING_CLOUD}, scheduled=false, period=5000, stopped=false} to beat map.
+2023-06-10 16:09:11.803  INFO 34193 --- [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] public registering service DEFAULT_GROUP@@iot-alarm-service with instance: Instance{instanceId='null', ip='10.131.1.28', port=30010, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={preserved.register.source=SPRING_CLOUD}}
+2023-06-10 16:09:11.815  INFO 34193 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP iot-alarm-service 10.131.1.28:30010 register finished
+2023-06-10 16:09:11.825  INFO 34193 --- [main] com.iot.alarm.AlarmApplication           : Started AlarmApplication in 3.444 seconds (JVM running for 3.815)
+2023-06-10 16:09:11.827  INFO 34193 --- [main] c.a.n.client.config.impl.ClientWorker    : [fixed-119.45.119.119_18848] [subscribe] iot-alarm-service+DEFAULT_GROUP
+2023-06-10 16:09:11.827  INFO 34193 --- [main] c.a.nacos.client.config.impl.CacheData   : [fixed-119.45.119.119_18848] [add-listener] ok, tenant=, dataId=iot-alarm-service, group=DEFAULT_GROUP, cnt=1
+2023-06-10 16:09:11.827  INFO 34193 --- [main] c.a.c.n.refresh.NacosContextRefresher    : listening config: dataId=iot-alarm-service, group=DEFAULT_GROUP
+2023-06-10 16:09:11.828  INFO 34193 --- [main] c.a.n.client.config.impl.ClientWorker    : [fixed-119.45.119.119_18848] [subscribe] iot-alarm-service.yaml+DEFAULT_GROUP
+2023-06-10 16:09:11.828  INFO 34193 --- [main] c.a.nacos.client.config.impl.CacheData   : [fixed-119.45.119.119_18848] [add-listener] ok, tenant=, dataId=iot-alarm-service.yaml, group=DEFAULT_GROUP, cnt=1
+2023-06-10 16:09:11.828  INFO 34193 --- [main] c.a.c.n.refresh.NacosContextRefresher    : listening config: dataId=iot-alarm-service.yaml, group=DEFAULT_GROUP
+2023-06-10 16:09:11.828  INFO 34193 --- [main] c.a.n.client.config.impl.ClientWorker    : [fixed-119.45.119.119_18848] [subscribe] iot-alarm-service-dev.yaml+DEFAULT_GROUP
+2023-06-10 16:09:11.828  INFO 34193 --- [main] c.a.nacos.client.config.impl.CacheData   : [fixed-119.45.119.119_18848] [add-listener] ok, tenant=, dataId=iot-alarm-service-dev.yaml, group=DEFAULT_GROUP, cnt=1
+2023-06-10 16:09:11.828  INFO 34193 --- [main] c.a.c.n.refresh.NacosContextRefresher    : listening config: dataId=iot-alarm-service-dev.yaml, group=DEFAULT_GROUP
+2023-06-10 16:09:12.825  INFO 34193 --- [com.alibaba.nacos.client.naming.updater] com.alibaba.nacos.client.naming          : new ips(1) service: DEFAULT_GROUP@@iot-alarm-service@@DEFAULT -> [{"instanceId":"10.131.1.28#30010#DEFAULT#DEFAULT_GROUP@@iot-alarm-service","ip":"10.131.1.28","port":30010,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@iot-alarm-service","metadata":{"preserved.register.source":"SPRING_CLOUD"},"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}]
+2023-06-10 16:09:12.829  INFO 34193 --- [com.alibaba.nacos.client.naming.updater] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@iot-alarm-service@@DEFAULT -> [{"instanceId":"10.131.1.28#30010#DEFAULT#DEFAULT_GROUP@@iot-alarm-service","ip":"10.131.1.28","port":30010,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@iot-alarm-service","metadata":{"preserved.register.source":"SPRING_CLOUD"},"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}]
+2023-06-10 16:16:43.818  WARN 34193 --- [Thread-24] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2023-06-10 16:16:43.818  WARN 34193 --- [Thread-2] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2023-06-10 16:16:43.819  WARN 34193 --- [Thread-24] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2023-06-10 16:16:43.820  WARN 34193 --- [Thread-2] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2023-06-10 16:16:44.832  INFO 34193 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2023-06-10 16:16:44.832  INFO 34193 --- [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'iot-alarm-service-1.errorChannel' has 0 subscriber(s).
+2023-06-10 16:16:44.832  INFO 34193 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2023-06-10 16:16:44.834  INFO 34193 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2023-06-10 16:16:44.834  INFO 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [BEAT] removing beat: DEFAULT_GROUP@@iot-alarm-service:10.131.1.28:30010 from beat map.
+2023-06-10 16:16:44.834  INFO 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [DEREGISTER-SERVICE] public deregistering service DEFAULT_GROUP@@iot-alarm-service with instance: Instance{instanceId='null', ip='10.131.1.28', port=30010, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2023-06-10 16:16:44.845  INFO 34193 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2023-06-10 16:16:44.845  INFO 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.beat.BeatReactor do shutdown begin
+2023-06-10 16:16:47.858  INFO 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.beat.BeatReactor do shutdown stop
+2023-06-10 16:16:47.859  INFO 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.HostReactor do shutdown begin
+2023-06-10 16:16:50.870  INFO 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.PushReceiver do shutdown begin
+2023-06-10 16:16:53.884  INFO 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.PushReceiver do shutdown stop
+2023-06-10 16:16:53.884  INFO 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+2023-06-10 16:16:53.884  INFO 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+2023-06-10 16:16:53.884  INFO 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.HostReactor do shutdown stop
+2023-06-10 16:16:53.884  INFO 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.net.NamingProxy do shutdown begin
+2023-06-10 16:16:53.885  WARN 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Start destroying NacosRestTemplate
+2023-06-10 16:16:53.885  WARN 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Destruction of the end
+2023-06-10 16:16:53.885  INFO 34193 --- [SpringApplicationShutdownHook] c.a.n.client.identify.CredentialWatcher  : [null] CredentialWatcher is stopped
+2023-06-10 16:16:53.885  INFO 34193 --- [SpringApplicationShutdownHook] c.a.n.client.identify.CredentialService  : [null] CredentialService is freed
+2023-06-10 16:16:53.885  INFO 34193 --- [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.net.NamingProxy do shutdown stop
+2023-06-10 16:16:53.887  WARN 34193 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of close method failed on bean with name 'mqttClient': 已连接客户机 (32100)
+2023-06-10 16:16:53.890  INFO 34193 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...

@@ -1,0 +1,204 @@
+2024-08-02 15:47:39.228  INFO 16572 --- [main] com.iot.lamp.LampApplication             : The following 1 profile is active: "dev"
+2024-08-02 15:47:39.727  INFO 16572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:47:39.729  INFO 16572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:47:39.750  INFO 16572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:47:39.943  INFO 16572 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2024-08-02 15:47:39.955  INFO 16572 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2024-08-02 15:47:40.011  INFO 16572 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5d06c49c-ed67-314f-b3f8-28a51a0f4d1d
+2024-08-02 15:47:40.561  INFO 16572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8040 (http)
+2024-08-02 15:47:40.562  INFO 16572 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:47:40.562  INFO 16572 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:47:40.562  INFO 16572 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:47:40.565  INFO 16572 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:47:40.577  INFO 16572 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:47:40.577  INFO 16572 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:47:40.680  INFO 16572 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:47:40.681  INFO 16572 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1435 ms
+2024-08-02 15:47:42.306  INFO 16572 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'iot-device-service' URL not provided. Will try picking an instance via load-balancing.
+2024-08-02 15:47:44.585  WARN 16572 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-08-02 15:47:44.787  INFO 16572 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-08-02 15:47:44.787  INFO 16572 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'iot-lamp-service-1.errorChannel' has 1 subscriber(s).
+2024-08-02 15:47:44.787  INFO 16572 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2024-08-02 15:47:51.255  INFO 16572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8040 (http) with context path ''
+2024-08-02 15:47:57.648 ERROR 16572 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, iot-lamp-service register failed...NacosRegistration{nacosDiscoveryProperties=NacosDiscoveryProperties{serverAddr='119.45.119.119:18848', username='', password='', endpoint='', namespace='', watchDelay=30000, logName='', service='iot-lamp-service', weight=1.0, clusterName='DEFAULT', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='192.168.80.1', networkInterface='', port=8040, secure=false, accessKey='', secretKey='', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null, instanceEnabled=true, ephemeral=true, failureToleranceEnabled=false}, ipDeleteTimeout=null, failFast=true}},
+
+com.alibaba.nacos.api.exception.NacosException: failed to req API:/nacos/v1/ns/instance after all servers([119.45.119.119:18848]) tried: java.net.ConnectException: Connection refused: connect
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:556) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:498) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:493) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.registerService(NamingProxy.java:246) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.NacosNamingService.registerInstance(NacosNamingService.java:212) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:74) ~[spring-cloud-starter-alibaba-nacos-discovery-2021.0.1.0.jar:2021.0.1.0]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.register(AbstractAutoServiceRegistration.java:232) [spring-cloud-commons-3.1.3.jar:3.1.3]
+	at com.alibaba.cloud.nacos.registry.NacosAutoServiceRegistration.register(NacosAutoServiceRegistration.java:78) [spring-cloud-starter-alibaba-nacos-discovery-2021.0.1.0.jar:2021.0.1.0]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.start(AbstractAutoServiceRegistration.java:133) [spring-cloud-commons-3.1.3.jar:3.1.3]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.bind(AbstractAutoServiceRegistration.java:98) [spring-cloud-commons-3.1.3.jar:3.1.3]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:86) [spring-cloud-commons-3.1.3.jar:3.1.3]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:47) [spring-cloud-commons-3.1.3.jar:3.1.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176) [spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169) [spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143) [spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:421) [spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:378) [spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:46) [spring-boot-2.7.8.jar:2.7.8]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178) [spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54) [spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356) [spring-context-5.3.25.jar:5.3.25]
+	at java.lang.Iterable.forEach(Iterable.java:75) ~[na:1.8.0_341]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155) [spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123) [spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) [spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586) [spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.8.jar:2.7.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.8.jar:2.7.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.8.jar:2.7.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.8.jar:2.7.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.8.jar:2.7.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.8.jar:2.7.8]
+	at com.iot.lamp.LampApplication.main(LampApplication.java:15) ~[classes/:na]
+
+2024-08-02 15:47:57.648  WARN 16572 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is java.lang.reflect.UndeclaredThrowableException
+2024-08-02 15:47:57.648  INFO 16572 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-08-02 15:47:57.649  INFO 16572 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'iot-lamp-service-1.errorChannel' has 0 subscriber(s).
+2024-08-02 15:47:57.649  INFO 16572 --- [main] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-08-02 15:48:06.712  WARN 16572 --- [main] o.s.b.f.support.DisposableBeanAdapter    : Invocation of close method failed on bean with name 'mqttClient': 已连接客户机 (32100)
+2024-08-02 15:48:06.714  INFO 16572 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2024-08-02 15:48:07.930  INFO 16572 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-02 15:48:07.951  INFO 16572 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-08-02 15:48:07.976 ERROR 16572 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is java.lang.reflect.UndeclaredThrowableException
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356) ~[spring-context-5.3.25.jar:5.3.25]
+	at java.lang.Iterable.forEach(Iterable.java:75) ~[na:1.8.0_341]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.8.jar:2.7.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) [spring-boot-2.7.8.jar:2.7.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) [spring-boot-2.7.8.jar:2.7.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) [spring-boot-2.7.8.jar:2.7.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.7.8.jar:2.7.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.7.8.jar:2.7.8]
+	at com.iot.lamp.LampApplication.main(LampApplication.java:15) [classes/:na]
+Caused by: java.lang.reflect.UndeclaredThrowableException: null
+	at org.springframework.util.ReflectionUtils.rethrowRuntimeException(ReflectionUtils.java:147) ~[spring-core-5.3.25.jar:5.3.25]
+	at com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:82) ~[spring-cloud-starter-alibaba-nacos-discovery-2021.0.1.0.jar:2021.0.1.0]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.register(AbstractAutoServiceRegistration.java:232) ~[spring-cloud-commons-3.1.3.jar:3.1.3]
+	at com.alibaba.cloud.nacos.registry.NacosAutoServiceRegistration.register(NacosAutoServiceRegistration.java:78) ~[spring-cloud-starter-alibaba-nacos-discovery-2021.0.1.0.jar:2021.0.1.0]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.start(AbstractAutoServiceRegistration.java:133) ~[spring-cloud-commons-3.1.3.jar:3.1.3]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.bind(AbstractAutoServiceRegistration.java:98) ~[spring-cloud-commons-3.1.3.jar:3.1.3]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:86) ~[spring-cloud-commons-3.1.3.jar:3.1.3]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:47) ~[spring-cloud-commons-3.1.3.jar:3.1.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:421) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:378) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:46) ~[spring-boot-2.7.8.jar:2.7.8]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178) ~[spring-context-5.3.25.jar:5.3.25]
+	... 14 common frames omitted
+Caused by: com.alibaba.nacos.api.exception.NacosException: failed to req API:/nacos/v1/ns/instance after all servers([119.45.119.119:18848]) tried: java.net.ConnectException: Connection refused: connect
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:556) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:498) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:493) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.registerService(NamingProxy.java:246) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.NacosNamingService.registerInstance(NacosNamingService.java:212) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:74) ~[spring-cloud-starter-alibaba-nacos-discovery-2021.0.1.0.jar:2021.0.1.0]
+	... 27 common frames omitted
+
+2024-08-02 15:48:53.286  WARN 16572 --- [Thread-27] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2024-08-02 15:48:53.286  WARN 16572 --- [Thread-21] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2024-08-02 15:48:53.286  WARN 16572 --- [Thread-27] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2024-08-02 15:48:57.706  INFO 19736 --- [main] com.iot.lamp.LampApplication             : The following 1 profile is active: "dev"
+2024-08-02 15:48:58.201  INFO 19736 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-02 15:48:58.203  INFO 19736 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-02 15:48:58.225  INFO 19736 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-08-02 15:48:58.406  INFO 19736 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2024-08-02 15:48:58.416  INFO 19736 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2024-08-02 15:48:58.471  INFO 19736 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5d06c49c-ed67-314f-b3f8-28a51a0f4d1d
+2024-08-02 15:48:58.988  INFO 19736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8040 (http)
+2024-08-02 15:48:58.989  INFO 19736 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2024-08-02 15:48:58.989  INFO 19736 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-08-02 15:48:58.989  INFO 19736 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-08-02 15:48:58.992  INFO 19736 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2024-08-02 15:48:59.001  INFO 19736 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02 15:48:59.001  INFO 19736 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-02 15:48:59.110  INFO 19736 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02 15:48:59.110  INFO 19736 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1390 ms
+2024-08-02 15:49:00.294  INFO 19736 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'iot-device-service' URL not provided. Will try picking an instance via load-balancing.
+2024-08-02 15:49:02.596  WARN 19736 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-08-02 15:49:03.071  INFO 19736 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-08-02 15:49:03.071  INFO 19736 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'iot-lamp-service-1.errorChannel' has 1 subscriber(s).
+2024-08-02 15:49:03.072  INFO 19736 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2024-08-02 15:49:03.310  INFO 19736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8040 (http) with context path ''
+2024-08-02 15:49:03.328  INFO 19736 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP iot-lamp-service 192.168.80.1:8040 register finished
+2024-08-02 15:49:03.840  INFO 19736 --- [main] com.iot.lamp.LampApplication             : Started LampApplication in 7.848 seconds (JVM running for 8.848)
+2024-08-02 15:49:03.855  INFO 19736 --- [main] c.i.lamp.mqtt.subscribe.LampSubscriber   : 已订阅: [YZDX0001/Login]
+2024-08-02 15:49:03.865  INFO 19736 --- [main] c.i.lamp.mqtt.subscribe.LampSubscriber   : 已订阅: [YZDX0001/reply/#]
+2024-08-02 15:49:03.876  INFO 19736 --- [main] c.i.lamp.mqtt.subscribe.LampSubscriber   : 已订阅: [YZDX0001/warning/#]
+2024-08-02 15:49:03.883  INFO 19736 --- [main] c.i.lamp.mqtt.subscribe.LampSubscriber   : 已订阅: [config/reply/#]
+2024-08-02 15:49:03.948  INFO 19736 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-08-02 15:49:04.346  INFO 19736 --- [main] c.i.lamp.mqtt.subscribe.LampSubscriber   : 已订阅: [Alive/460047568608759]
+2024-08-02 15:49:04.354  INFO 19736 --- [main] c.i.lamp.mqtt.subscribe.LampSubscriber   : 已订阅: [Alive/460047568608760]
+2024-08-02 15:49:04.362  INFO 19736 --- [main] c.i.lamp.mqtt.subscribe.LampSubscriber   : 已订阅: [Alive/460047568608761]
+2024-08-02 15:49:04.372  INFO 19736 --- [main] c.i.lamp.mqtt.subscribe.LampSubscriber   : 已订阅: [Alive/460047568608762]
+2024-08-02 15:49:04.380  INFO 19736 --- [main] c.i.lamp.mqtt.subscribe.LampSubscriber   : 已订阅: [Alive/460047568608763]
+2024-08-02 19:32:18.921 ERROR 19736 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+org.springframework.data.redis.RedisConnectionFailureException: java.net.SocketTimeoutException: Read timed out; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at org.springframework.data.redis.connection.jedis.JedisExceptionConverter.convert(JedisExceptionConverter.java:65) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.connection.jedis.JedisExceptionConverter.convert(JedisExceptionConverter.java:42) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:44) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:42) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.connection.jedis.JedisConnection.convertJedisAccessException(JedisConnection.java:192) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.connection.jedis.JedisConnection.doWithJedis(JedisConnection.java:827) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.connection.jedis.JedisConnection.doInvoke(JedisConnection.java:165) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.connection.jedis.JedisConnection.lambda$new$0(JedisConnection.java:74) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.connection.jedis.JedisInvoker$Synchronizer.invoke(JedisInvoker.java:1018) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.connection.jedis.JedisInvoker.just(JedisInvoker.java:112) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.connection.jedis.JedisKeyCommands.exists(JedisKeyCommands.java:68) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.exists(DefaultedRedisConnection.java:81) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.core.RedisTemplate.lambda$hasKey$7(RedisTemplate.java:782) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:224) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:191) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.core.RedisTemplate.hasKey(RedisTemplate.java:782) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at com.cloud.common.redis.service.RedisService.hasKey(RedisService.java:62) ~[classes/:na]
+	at com.iot.lamp.job.HeartbeatProbe.probe(HeartbeatProbe.java:34) ~[classes/:na]
+	at sun.reflect.GeneratedMethodAccessor32.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_341]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_341]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.25.jar:5.3.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_341]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_341]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_341]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_341]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_341]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_341]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_341]
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.jedis.util.RedisInputStream.ensureFill(RedisInputStream.java:205) ~[jedis-3.8.0.jar:na]
+	at redis.clients.jedis.util.RedisInputStream.readByte(RedisInputStream.java:43) ~[jedis-3.8.0.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:165) ~[jedis-3.8.0.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:230) ~[jedis-3.8.0.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:352) ~[jedis-3.8.0.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:294) ~[jedis-3.8.0.jar:na]
+	at redis.clients.jedis.BinaryJedis.exists(BinaryJedis.java:505) ~[jedis-3.8.0.jar:na]
+	at org.springframework.data.redis.connection.jedis.JedisInvoker.lambda$just$3(JedisInvoker.java:112) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.connection.jedis.JedisConnection.lambda$doInvoke$2(JedisConnection.java:181) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	at org.springframework.data.redis.connection.jedis.JedisConnection.doWithJedis(JedisConnection.java:824) ~[spring-data-redis-2.7.7.jar:2.7.7]
+	... 24 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_341]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[na:1.8.0_341]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[na:1.8.0_341]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[na:1.8.0_341]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[na:1.8.0_341]
+	at redis.clients.jedis.util.RedisInputStream.ensureFill(RedisInputStream.java:199) ~[jedis-3.8.0.jar:na]
+	... 33 common frames omitted
+

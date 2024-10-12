@@ -1,0 +1,100 @@
+server:
+  # 网关微服务端口
+  port: 8020
+
+logging:
+  file:
+    path: logs/cloud-gateway
+
+spring:
+  banner:
+    location: banner.txt
+  # 微服务名称
+  application:
+    name: lamp-service
+  # dev环境
+  profiles:
+    active: dev
+  # Redis服务及端口
+  redis:
+    host: 118.31.104.26
+    port: 6479
+    password: password
+  # SpringCloud相关配置
+  cloud:
+    # Nacos服务发现及配置发现中心地址
+    nacos:
+      discovery:
+        server-addr: 192.168.50.128:8848
+      # Nacos配置中心地址
+#      config:
+#        server-addr: 119.45.119.119:18848
+#        file-extension: yaml
+#        shared-configs:
+#          - shared-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+    # Sentinel面板地址
+#    sentinel:
+#      transport:
+#        dashboard: 43.142.108.154:18080
+    # 网关配置
+    gateway:
+      # CORS跨域配置
+      globalcors:
+        # options预请求迅速放行
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - "GET"
+              - "POST"
+              - "PUT"
+              - "DELETE"
+              - "OPTIONS"
+            allowedHeaders: "*"
+            # 是否允许携带cookie，此处暂不开启
+            # allowCredentials: true
+            maxAge: 360000
+      # 网关路由配置
+      routes:
+        # websocket路由配置
+        - id: websocket
+          uri: lb:ws://user-service
+          predicates:
+            - Path=/ws/**
+        # 用户微服务路由规则
+        - id: user_service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/user/**
+        # 灯杆微服务路由规则
+        - id: iot_lamppost_service
+          uri: lb://iot-lamppost-service
+          predicates:
+            - Path=/api/lamppost/**
+        # 设备微服务路由规则
+        - id: iot_device_service
+          uri: lb://iot-device-service
+          predicates:
+            - Path=/api/device/**
+        # 灯控器微服务路由规则
+        - id: iot_lamp_service
+          uri: lb://iot-lamp-service
+          predicates:
+            - Path=/api/lamp/**
+        # iot-gateway微服务路由规则
+        - id: iot_gateway_service
+          uri: lb://iot-gateway-service
+          predicates:
+            - Path=/api/gateway/**
+        # led广告屏微服务路由规则
+        - id: iot_screen_service
+          uri: lb://iot-screen-service
+          predicates:
+            - Path=/api/led/**
+        # 摄像头微服务路由规则
+        - id: iot_camera_service
+          uri: lb://iot-camera-service
+          predicates:
+            - Path=/api/camera/**
+

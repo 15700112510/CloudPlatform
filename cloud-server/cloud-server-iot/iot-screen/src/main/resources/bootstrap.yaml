@@ -1,0 +1,23 @@
+server:
+  port: 30070
+
+screen:
+  apiUrl: https://www.iledcloud.cn/cloudapi
+  appKey: BF2D23F534BA424AA66D123578060117
+  screens: C0Y2L02010290040
+
+spring:
+  application:
+    name: iot-screen-service
+  profiles:
+    active: dev
+  # SpringCloud相关配置
+  cloud:
+    # Nacos服务发现及配置发现中心地址
+    nacos:
+      discovery:
+        server-addr: 192.168.50.128:8848
+    # sentinel控制面板服务地址
+#    sentinel:
+#      transport:
+#        dashboard: 43.142.108.154:18080

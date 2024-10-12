@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iot.lamp.mapper.LampAlarmMapper">
+
+    <insert id="addAlarm">
+        insert into cloud_lamp_alarm (lamp_id, type, value, number, create_time, update_time)
+        values ( (select lamp_id from cloud_mount_lamp where card_no = #{cardNo})
+               , #{type}, #{value}, #{number}, now(), now())
+    </insert>
+
+    <select id="getCardNoByAlarmId" resultType="java.lang.String">
+        select card_no
+        from cloud_lamp_alarm
+                 left join cloud_mount_lamp on cloud_lamp_alarm.lamp_id = cloud_mount_lamp.lamp_id
+        where alarm_id = #{alarmId}
+    </select>
+
+    <update id="alarmClear">
+        update cloud_lamp_alarm
+        set update_time = now(),
+            status      = '1',
+            ops_by      = #{param2}
+        where lamp_id = (select lamp_id from cloud_mount_lamp where card_no = #{param1})
+    </update>
+
+    <select id="getPage" resultType="com.iot.lamp.dto.LampAlarmDto">
+        select alarm_id,
+               card_no,
+               type,
+               value,
+               number,
+               create_time,
+               update_time,
+               status,
+               ops_by
+        from cloud.cloud_lamp_alarm
+                 left join cloud.cloud_mount_lamp on cloud_lamp_alarm.lamp_id = cloud_mount_lamp.lamp_id
+        where status = '0'
+    </select>
+
+    <select id="getPageByCardNo" resultType="com.iot.lamp.dto.LampAlarmDto">
+        select alarm_id,
+               card_no,
+               type,
+               value,
+               number,
+               create_time,
+               update_time,
+               status,
+               ops_by
+        from cloud.cloud_lamp_alarm
+                 left join cloud.cloud_mount_lamp on cloud_lamp_alarm.lamp_id = cloud_mount_lamp.lamp_id
+        where card_no = #{cardNo}
+          and status = '0'
+    </select>
+
+    <select id="getPageByCardNoAndTime" resultType="com.iot.lamp.dto.LampAlarmDto">
+        select alarm_id,
+               card_no,
+               type,
+               value,
+               number,
+               create_time,
+               update_time,
+               status,
+               ops_by
+        from cloud.cloud_lamp_alarm
+                 left join cloud.cloud_mount_lamp on cloud_lamp_alarm.lamp_id = cloud_mount_lamp.lamp_id
+        where card_no = #{cardNo}
+          and status = '0'
+          and date_format(create_time, '%Y-%m-%d/%H') between #{startTime} and #{endTime}
+    </select>
+
+    <select id="getAlarmCount" resultType="java.lang.Integer">
+        select count(*)
+        from cloud.cloud_lamp_alarm
+        where alarm_id = #{alarmId}
+    </select>
+
+    <select id="getPageRepair" resultType="com.iot.lamp.dto.LampAlarmDto">
+        select alarm_id,
+               card_no,
+               type,
+               value,
+               number,
+               create_time,
+               update_time,
+               status,
+               ops_by
+        from cloud.cloud_lamp_alarm
+                 left join cloud.cloud_mount_lamp on cloud_lamp_alarm.lamp_id = cloud_mount_lamp.lamp_id
+        where status = '1'
+    </select>
+
+    <select id="isRepaired" resultType="java.lang.Integer">
+        select count(*)
+        from cloud.cloud_lamp_alarm
+        where alarm_id = #{alarmId}
+          and status = '0'
+    </select>
+
+    <select id="getAlarmNum" resultType="java.lang.Integer">
+        select count(*)
+        from (select lamp_id
+              from cloud.cloud_lamp_alarm
+              union
+              select lamp_id
+              from cloud.cloud_lamp_alarm) as clacla
+    </select>
+
+</mapper>

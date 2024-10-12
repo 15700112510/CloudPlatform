@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iot.lamp.mapper.LampParamMapper">
+
+    <insert id="addElcData">
+        insert into cloud_lamp_param(lamp_id, brightness, current, voltage, power, factor, electricity, create_time)
+        values ((select lamp_id from cloud_mount_lamp where card_no = #{cardNo}), #{brightness}, #{current}, #{voltage},
+                #{power}, #{factor}, #{electricity}, now())
+    </insert>
+
+    <update id="updateGroupBrightness">
+        update cloud.cloud_lamp_param
+            left join cloud.cloud_mount_lamp on cloud_lamp_param.lamp_id = cloud_mount_lamp.lamp_id
+            left join cloud.cloud_device on cloud_mount_lamp.device_id = cloud_device.device_id
+            left join cloud.cloud_lamppost on cloud_device.lamppost_id = cloud_lamppost.lamppost_id
+        set brightness = #{param1}
+        where group_no = #{param2}
+    </update>
+
+    <select id="getLatestParamByCardNo" resultType="com.iot.lamp.dto.LampParamDto">
+        select card_no,
+               brightness,
+               current,
+               voltage,
+               power,
+               factor,
+               electricity,
+               create_time
+        from cloud.cloud_lamp_param
+                 left join cloud.cloud_mount_lamp
+                           on cloud_lamp_param.lamp_id = cloud_mount_lamp.lamp_id
+        where card_no = #{cardNo}
+        order by create_time
+        limit 1
+    </select>
+
+    <select id="getAllParamByCardNo" resultType="com.iot.lamp.dto.LampParamDto">
+        select card_no,
+               brightness,
+               current,
+               voltage,
+               power,
+               factor,
+               electricity,
+               create_time
+        from cloud.cloud_lamp_param
+                 left join cloud.cloud_mount_lamp
+                           on cloud_lamp_param.lamp_id = cloud_mount_lamp.lamp_id
+        where card_no = #{cardNo}
+        order by create_time
+    </select>
+
+    <select id="getParamByTimeInterval" resultType="com.iot.lamp.dto.LampParamDto">
+        select card_no,
+               brightness,
+               current,
+               voltage,
+               power,
+               factor,
+               electricity,
+               create_time
+        from cloud.cloud_lamp_param
+                 left join cloud.cloud_mount_lamp
+                           on cloud_lamp_param.lamp_id = cloud_mount_lamp.lamp_id
+        where card_no = #{param1}
+          and date_format(create_time
+            , '%Y-%m-%d/%H') between #{param2}
+            and #{param3}
+    </select>
+
+    <select id="getPageParam" resultType="com.iot.lamp.dto.LampParamDto">
+        select card_no,
+               brightness,
+               current,
+               voltage,
+               power,
+               factor,
+               electricity,
+               create_time
+        from cloud.cloud_lamp_param
+                 left join cloud.cloud_mount_lamp
+                           on cloud_lamp_param.lamp_id = cloud_mount_lamp.lamp_id
+    </select>
+</mapper>

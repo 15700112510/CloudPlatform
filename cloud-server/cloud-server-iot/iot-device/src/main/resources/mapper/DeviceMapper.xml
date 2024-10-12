@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iot.device.mapper.DeviceMapper">
+
+    <insert id="addDevice" parameterType="com.cloud.api.model.Device">
+        insert into cloud.cloud_device (lamppost_id, type, create_time, create_by, update_time, update_by, status)
+        values (#{lamppostId}, #{type}, now(), #{createBy}, now(), #{updateBy}, '1')
+    </insert>
+
+    <select id="getLastInsert" resultType="java.lang.Long">
+        select LAST_INSERT_ID()
+    </select>
+
+    <update id="login">
+        update cloud_device
+        set status      = '0',
+            update_time = now(),
+            update_by   = 'sys_online'
+        where device_id = #{deviceId}
+    </update>
+
+    <update id="logout">
+        update cloud_device
+        set status      = '1',
+            update_time = now(),
+            update_by   = 'sys_outline'
+        where device_id = #{deviceId}
+    </update>
+
+    <select id="lamppostExistCount" parameterType="java.lang.Long" resultType="java.lang.Integer">
+        select count(*)
+        from cloud.cloud_lamppost
+        where lamppost_id = #{lamppostId}
+    </select>
+
+    <select id="lampExistCount" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select count(lamp_id)
+        from cloud.cloud_mount_lamp
+        where card_no = #{cardNo}
+    </select>
+
+    <select id="lampTypeExistCount" parameterType="java.lang.Long" resultType="java.lang.Integer">
+        select count(device_id)
+        from cloud.cloud_device
+        where lamppost_id = #{lamppostId}
+          and type = 'L'
+    </select>
+
+    <select id="queryLatestDeviceId" resultType="java.lang.Long">
+        select device_id
+        from cloud.cloud_device
+        order by create_time desc
+        limit 1
+    </select>
+
+    <select id="getLamp" resultType="com.iot.device.dto.LampDeviceDto">
+        select cloud_device.create_time,
+               cloud_device.create_by,
+               cloud_device.update_time,
+               cloud_device.update_by,
+               cloud_device.status,
+               cloud_mount_lamp.card_no
+        from cloud.cloud_device
+                 left join cloud.cloud_mount_lamp
+                           on cloud_device.device_id = cloud_mount_lamp.device_id
+        where cloud_device.type = #{param1}
+          and cloud_device.lamppost_id = #{param2}
+    </select>
+
+    <select id="getPageLamps" resultType="com.iot.device.dto.LampDeviceDto">
+        select cloud_device.create_time,
+               cloud_device.create_by,
+               cloud_device.update_time,
+               cloud_device.update_by,
+               cloud_device.status,
+               cloud_mount_lamp.card_no
+        from cloud.cloud_device
+                 left join cloud.cloud_mount_lamp
+                           on cloud_device.device_id = cloud_mount_lamp.device_id
+        where cloud_device.create_by like #{wrapper}
+        and cloud_device.type = 'L'
+    </select>
+
+    <select id="getStatus" resultType="java.lang.Character">
+        select status
+        from cloud_device
+        where device_id = #{deviceId}
+    </select>
+
+</mapper>

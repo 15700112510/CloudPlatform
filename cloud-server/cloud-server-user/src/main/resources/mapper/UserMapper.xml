@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.server.user.mapper.UserMapper">
+    <insert id="insertUser" parameterType="com.cloud.server.user.domain.User">
+        insert into cloud.cloud_user(username, password, nickname, phone_num, role, create_time, create_by, update_time,
+                                     update_by)
+        values (#{username}, #{password}, #{nickname}, #{phoneNum}, #{role}, now(), #{username}, now(), #{username})
+    </insert>
+
+    <update id="updatePassword" parameterType="com.cloud.server.user.domain.User">
+        update cloud.cloud_user
+        set password    = #{password},
+            update_time = now(),
+            update_by   = #{updateBy}
+        where phone_num = #{phoneNum}
+    </update>
+
+    <update id="updateNickname">
+        update cloud.cloud_user
+        set nickname    = #{nickname},
+            update_time = now(),
+            update_by   = #{updateBy}
+        where user_id = #{userId}
+    </update>
+
+    <update id="logout">
+        update cloud.cloud_user
+        set flag = '1'
+        where username = #{username}
+    </update>
+
+    <update id="login">
+        update cloud.cloud_user
+        set flag = '0'
+        where user_id = #{userId}
+    </update>
+
+    <select id="usernameExistCount" parameterType="string" resultType="java.lang.Integer">
+        select count(user_id)
+        from cloud.cloud_user
+        where username = #{username}
+    </select>
+
+    <select id="phoneNumExistCount" parameterType="string" resultType="java.lang.Integer">
+        select count(user_id)
+        from cloud.cloud_user
+        where phone_num = #{phoneNum}
+    </select>
+
+    <select id="rootExistCount" parameterType="string" resultType="java.lang.Integer">
+        select count(user_id)
+        from cloud.cloud_user
+        where username = #{root}
+           or phone_num = #{root}
+    </select>
+
+    <select id="queryUserByRoot" parameterType="string" resultType="com.cloud.server.user.domain.User">
+        select *
+        from cloud.cloud_user
+        where username = #{root}
+           or phone_num = #{root}
+    </select>
+
+    <select id="queryUsernameByPhoneNum" parameterType="java.lang.String" resultType="java.lang.String">
+        select username
+        from cloud.cloud_user
+        where phone_num = #{phoneNum}
+    </select>
+
+    <select id="queryUserById" resultType="com.cloud.server.user.domain.User">
+        select *
+        from cloud.cloud_user
+        where user_id = #{userId}
+    </select>
+
+    <select id="nicknameExistCount" resultType="java.lang.Integer">
+        select count(*)
+        from cloud.cloud_user
+        where nickname = #{nickname}
+    </select>
+
+    <select id="getFlag" resultType="java.lang.Character">
+        select flag
+        from cloud.cloud_user
+        where username = #{root}
+           or phone_num = #{root}
+    </select>
+
+    <select id="getPageUsers" resultType="com.cloud.server.user.domain.User">
+        select *
+        from cloud_user
+        where user_id like #{wrapper}
+           or username like #{wrapper}
+           or nickname like #{wrapper}
+           or phone_num like #{wrapper}
+    </select>
+</mapper>

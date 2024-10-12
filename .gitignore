@@ -1,0 +1,14 @@
+# Project exclude paths
+/cloud-api/target/
+/cloud-common/cloud-common-core/target/
+/cloud-common/cloud-common-datasource/target/
+/cloud-common/cloud-common-redis/target/
+/cloud-common/cloud-common-security/target/
+/cloud-gateway/target/
+/cloud-server/cloud-server-iot/iot.camera/target/
+/cloud-server/cloud-server-iot/iot-device/target/
+/cloud-server/cloud-server-iot/iot-gateway/target/
+/cloud-server/cloud-server-iot/iot-lamp/target/
+/cloud-server/cloud-server-iot/iot-lamppost/target/
+/cloud-server/cloud-server-iot/iot-screen/target/
+/cloud-server/cloud-server-user/target/

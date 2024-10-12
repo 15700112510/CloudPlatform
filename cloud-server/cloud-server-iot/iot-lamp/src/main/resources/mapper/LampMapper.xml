@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iot.lamp.mapper.LampMapper">
+
+    <insert id="addLamp" parameterType="com.cloud.api.model.Lamp">
+        insert into cloud.cloud_mount_lamp (device_id, card_no)
+        values (#{deviceId}, #{cardNo})
+    </insert>
+
+    <insert id="addDefaultConfig">
+        insert into cloud_lamp_default_config (lamp_id, auto_send, alive, self_check, locate, rtc, create_time,
+                                               update_time, create_by, update_by)
+        values ((select lamp_id from cloud_mount_lamp where card_no = #{cardNo}), #{autoSend}, #{alive}, #{selfCheck},
+                #{locate}, #{rtc}, now(), now(), #{userId}, #{userId})
+    </insert>
+
+    <update id="updateDefaultConfig">
+        update cloud_lamp_default_config
+        set auto_send   = #{autoSend},
+            alive       = #{alive},
+            self_check  = #{selfCheck},
+            locate      = #{locate},
+            rtc         = #{rtc},
+            update_time = now(),
+            update_by   = #{userId}
+        where lamp_id = (select lamp_id from cloud_mount_lamp where card_no = #{cardNo})
+    </update>
+
+    <insert id="addClockConfig">
+        insert into cloud_lamp_clock_config (lamp_id, clock_no, clock_time, clock_task, create_time, update_time,
+                                             create_by, update_by)
+        values ((select lamp_id from cloud_mount_lamp where card_no = #{cardNo}), #{clockNo}, #{clockTime},
+                #{clockTask}, now(), now(), #{userId}, #{userId})
+    </insert>
+
+    <update id="updateClockConfig">
+        update cloud_lamp_clock_config
+        set clock_time  = #{clockTime},
+            clock_task  = #{clockTask},
+            update_time = now(),
+            update_by   = #{userId}
+        where clock_no = #{clockNo}
+          and lamp_id = (select lamp_id from cloud_mount_lamp where card_no = #{cardNo})
+    </update>
+
+    <select id="getCardNoCount" resultType="java.lang.Integer">
+        select count(*)
+        from cloud.cloud_mount_lamp
+        where card_no = #{cardNo}
+    </select>
+
+    <select id="getTotalNum" resultType="java.lang.Integer">
+        select count(*)
+        from cloud.cloud_mount_lamp
+    </select>
+
+    <select id="getAllDeviceId" resultType="java.lang.Long">
+        select device_id
+        from cloud_mount_lamp
+    </select>
+
+    <select id="getAllCardNo" resultType="java.lang.String">
+        select card_no
+        from cloud_mount_lamp
+    </select>
+
+    <select id="getAllOnlineCardNo" resultType="java.lang.String">
+        select card_no
+        from cloud_mount_lamp
+                 left join cloud_device on cloud_mount_lamp.device_id = cloud_device.device_id
+        where status = '0'
+    </select>
+
+    <select id="getDeviceId" resultType="java.lang.Long">
+        select device_id
+        from cloud_mount_lamp
+        where card_no = #{cardNo}
+    </select>
+
+    <select id="getLampId" resultType="java.lang.Long">
+        select lamp_id
+        from cloud_mount_lamp
+        where card_no = #{cardNo}
+    </select>
+
+    <select id="getLampIdByDeviceId" resultType="java.lang.Long">
+        select lamp_id
+        from cloud_mount_lamp
+        where device_id = #{deviceId}
+    </select>
+
+    <select id="getClockTime" resultType="java.lang.String">
+        select clock_time
+        from cloud_lamp_clock_config
+        where clock_no = #{clockNo}
+    </select>
+
+    <select id="getClockTask" resultType="java.lang.String">
+        select clock_task
+        from cloud_lamp_clock_config
+        where clock_no = #{clockNo}
+    </select>
+
+</mapper>

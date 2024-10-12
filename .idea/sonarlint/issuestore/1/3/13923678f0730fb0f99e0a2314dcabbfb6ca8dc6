@@ -1,0 +1,25 @@
+
+^
+java:S1192¸"GDefine a constant instead of duplicating this literal ":Lamps" 3 times.(¨”êÊ
+b
+java:S1301›"KReplace this "switch" statement by "if" statements to increase readability.(ÜŸ•
+b
+java:S1301Õ"KReplace this "switch" statement by "if" statements to increase readability.(ÜŸ•
+X
+java:S6813!"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813#"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813'"BRemove this field injection and use constructor injection instead.(êæÄŞ
+h
+java:S37761"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(Å›•Å
+f	java:S128="LEnd this switch case with an unconditional break, return or throw statement.(÷²³ıÿÿÿÿÿ
+k
+java:S3252³"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Î’¦ûÿÿÿÿ
+k
+java:S3252¾"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Î’¦ûÿÿÿÿ
+A	java:S106Ñ"+Replace this use of System.out by a logger.(ÍÚ§ƒ
+Ü
+java:S65411"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 65 to 64, Complexity from 17 to 14, Nesting Level from 3 to 2, Number of Variables from 19 to 6.(Å›•Å

@@ -1,0 +1,51 @@
+server:
+  port: 8030
+
+logging:
+  file:
+    path: logs/cloud-server/cloud-server-iot/iot-lamppost
+
+spring:
+  application:
+    name: lamp-service
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: password
+    url: jdbc:mysql://118.31.104.26:13306/cloud?characterEncoding=utf8&useUnicode=true&verifyServerCertificate=false&useSSL=false&requireSSL=false&serverTimezone=Asia/Shanghai
+    type: com.alibaba.druid.pool.DruidDataSource
+  # Redis服务及端口
+  redis:
+    host: 118.31.104.26
+    port: 6479
+    password: password
+  # SpringCloud相关配置
+  cloud:
+    # Nacos服务发现及配置发现中心地址
+    nacos:
+      discovery:
+        server-addr: 192.168.50.128:8848
+      # Nacos配置中心地址
+#      config:
+#        server-addr: 119.45.119.119:18848
+#        file-extension: yaml
+#        shared-configs:
+#          - shared-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+    # sentinel控制面板服务地址
+#    sentinel:
+#      transport:
+#        dashboard: 43.142.108.154:18080
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    # 开启驼峰映射，使得数据库字段与实体类映射起来
+    map-underscore-to-camel-case: true
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

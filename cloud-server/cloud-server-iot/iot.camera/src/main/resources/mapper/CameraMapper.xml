@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iot.camera.mapper.CameraMapper">
+
+    <insert id="addCamera" parameterType="com.iot.camera.domain.Camera">
+        insert into cloud_camera(lampId, create_time,create_by,status)
+        values (#{lampId}, now(), #{createBy},#{status})
+    </insert>
+
+    <select id="queryCamera" resultType="com.iot.camera.domain.Camera">
+        select * from cloud_camera
+    </select>
+
+
+</mapper>

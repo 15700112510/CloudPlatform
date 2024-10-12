@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iot.lamppost.mapper.LamppostMapper">
+
+    <insert id="addLamppost" parameterType="com.iot.lamppost.domain.Lamppost">
+        insert into cloud.cloud_lamppost(lamppost_name, group_no, create_time, create_by, update_time, update_by)
+        values (#{lamppostName}, #{groupNo}, now(), #{createBy}, now(), #{updateBy})
+    </insert>
+
+    <update id="editLamppostName" parameterType="com.iot.lamppost.dto.LamppostNameDto">
+        update cloud.cloud_lamppost
+        set lamppost_name = #{lamppostName},
+            update_by     = #{opsBy},
+            update_time   = now()
+        where lamppost_id = #{lamppostId}
+    </update>
+
+    <select id="queryLamppostByNameAndGroup" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select count(lamppost_id)
+        from cloud.cloud_lamppost
+        where lamppost_name = #{param1}
+          and group_no = #{param2}
+    </select>
+
+    <select id="getAllLamppost" resultType="com.iot.lamppost.domain.Lamppost">
+        select *
+        from cloud.cloud_lamppost
+    </select>
+
+    <select id="getPageLamppost" resultType="com.iot.lamppost.domain.Lamppost">
+        select *
+        from cloud.cloud_lamppost
+        where lamppost_id like #{wrapper}
+           or lamppost_name like #{wrapper}
+           or group_no like #{wrapper}
+    </select>
+
+    <select id="getByNameAndGroup" resultType="com.iot.lamppost.domain.Lamppost">
+        select *
+        from cloud.cloud_lamppost
+        where lamppost_name = #{param1}
+          and group_no = #{param2}
+    </select>
+
+    <select id="queryLamppostNum" resultType="java.lang.Integer">
+        select count(*)
+        from cloud.cloud_lamppost
+    </select>
+
+    <select id="queryCardNoByLamppostId" resultType="java.lang.String">
+        select card_no
+        from cloud.cloud_mount_lamp
+                 left join cloud.cloud_device on cloud_mount_lamp.device_id = cloud_device.device_id
+        where lamppost_id = #{lamppostId}
+    </select>
+
+    <select id="queryLamppostInfoByCardNo" resultType="com.iot.lamppost.dto.LamppostInfoDto">
+        select lamppost_name, group_no, longitude, latitude, location
+        from cloud.cloud_lamppost
+        where lamppost_id = (select lamppost_id
+                             from cloud.cloud_mount_lamp
+                                      left join cloud.cloud_device
+                                                on cloud_mount_lamp.device_id = cloud_device.device_id
+                             where card_no = #{cardNo})
+    </select>
+
+</mapper>
